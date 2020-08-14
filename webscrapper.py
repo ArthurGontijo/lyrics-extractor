@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import time
 from os import system
+from sys import platform
 
 
 def create_soup(url):
@@ -51,8 +52,16 @@ def get_lyrics(url):
     f.close()
 
 
+def clear_screen():
+    operating_system = platform
+    if operating_system == 'win32':
+        system('cls')
+    else:
+        system('clear')
+
+
 def main():
-    system('clear')
+    clear_screen()
     band_name = format_name(str(input('Please type the name of the desired artist: ')))
     url = f'https://www.azlyrics.com/{band_name[0]}/{band_name}.html'
 
@@ -69,7 +78,7 @@ def main():
             song_url = create_song_url(song, band_name)
             get_lyrics(song_url)
             total -= 1
-            system('clear')
+            clear_screen()
             print(f'Lyrics successfully saved. {total} songs left.')
             print(f'Estimated time left: {int((total * 5)/60)} minutes')
             time.sleep(5)
