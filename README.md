@@ -16,7 +16,7 @@ Then, install the requirements using: <br>
 pip install -r requirements.txt
 ``` 
 <br>
-Now, execute the file called **webscrapper.py** it will ask you the name of the artist and then will start saving the lyrics in a txt file named **lyrics.txt**
+Now, execute the file called webscrapper.py it will ask you the name of the artist and then will start saving the lyrics in a txt file named lyrics.txt
 
 ## Warning
 Unfortunately the extraction process is somehow slow because there is a five seconds delay between each request, otherwise the site's anti-bot system would trigger and block your ip adress from doing further requests.  
